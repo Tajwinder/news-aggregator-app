@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News Aggregator</title>
+  <link rel="stylesheet" href="styles/index.css">
+  
+
+
 </head>
-<body>
-  <h1 class="site-title">News Aggregator</h1>
+<body id="mybody" >
+  <h1 class="site-title site-title_light">News Aggregator</h1>
+
+  <button id='toggleBtn'>Dark-Mode</button>
+  <br>
+  <br>
+  <br>
   
   <div class="search-container">
-    <input type="text" name="search" id="search" placeholder="Type and press enter to search..." />
+   
+    <input type="text" onkeypress='checkEnterClick(event)' onkeyup="reset()" name="search" id="search" class="search_light" placeholder="Type and press enter to search..." />
   </div>
-
+ 
+  <br>
+  <br>
+  <p class="not-found" ></p>
+  <div class="loader"></div>
+<div class="place">
   <ul id="news-articles">
-
+         
   </ul>
+</div>
+
+
+<script src="scripts/index.js"></script>
 </body>
 </html>
+

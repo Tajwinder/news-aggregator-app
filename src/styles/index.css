@@ -1,2 +1,217 @@
-@import "./reset.css";
+/* @import "./reset.css"; */
+*{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.01em;
+}
+body{
+  padding: 0px 50px;
+  margin: 0;
+  margin: 20px;
+ 
+ 
+}
 
+.body_dark{
+  background-color: black;
+  color: white;
+  
+}
+
+.card_dark{
+background-color: rgb(59, 58, 58);
+  color:white;
+ 
+}
+.card_light{
+  background-color: rgb(233, 227, 227);
+  color: black;
+}
+
+
+
+.search_light{
+  background-color: white;
+  color: black;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.search_dark{
+  background-color: black;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+}
+.site-title{
+text-align: center;
+font-size: 1.5em;
+font-weight:bolder;
+width: 270px;
+padding: 15px;
+margin:0px auto 30px auto;
+
+}
+.site-title_light{
+  background-color: white;
+  color: black ;
+  border: 2px solid black;
+}
+.site-title_dark{
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+#toggleBtn{
+  float: right;
+  border-radius: 5px;
+  padding: 5px;
+}
+#search{
+  width: 100%;
+  height: 40px;
+  
+ 
+  
+}
+/* #search:active{
+  border: none;
+ 
+} */
+.loader {
+  display: none;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #a153eb;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 50px auto;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* unordered list of news articles */
+  
+#news-articles{
+ 
+   display: grid;
+   gap: 20px;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+ 
+ 
+}
+@media only screen and (max-width: 400px) {
+  #news-articles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #news-articles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #news-articles {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #news-articles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4,1fr)
+  }
+}
+
+a{
+  text-decoration: none;
+  color: initial;
+
+}
+
+/* li element for news articles */
+.article{
+  
+  padding: 15px;
+ margin: 0;
+ height:420px;
+ border-radius: 5px;
+ position: relative;
+ 
+}
+
+.img{
+  position: relative;
+  z-index: 0;
+}
+
+
+
+.img:hover{
+  -webkit-filter: contrast(120%);
+}
+
+#urlLink{
+ display: none;
+  background-color: rgb(182, 176, 176);
+  z-index: 1;
+}
+
+/* displaying urlLink at the bottom upon hovering on news articles */
+li:hover #urlLink{
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  
+}
+
+.article-author{
+  color: blue;
+ 
+ 
+ position: absolute;
+ top:420px;
+ right:15px;
+
+}
+
+
+/* card style */
+.article{
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 0px;
+  }
