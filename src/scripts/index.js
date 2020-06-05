@@ -144,7 +144,7 @@ async function fetchTopHeadlines(){
      
        htmlString=`
        <a href=" ${url}" target="_blank"> 
-          <li class="article card_light">
+          <li class="article" id="card_light">
           <div class="img"> 
          <img class="article-img" src="${image}" style="width:100%;" >
          
@@ -229,7 +229,7 @@ let checkNoArticle=(jsonResponse)=>{
   
   }
   
-
+  let clickCount=0;
   // function to called on dark-mode button click
 const darkbg=()=>{
   let modeChange=document.getElementById('toggleBtn');
@@ -252,11 +252,15 @@ const darkbg=()=>{
    siteTitle.classList.toggle("site-title_dark");
    
    let card=document.getElementsByClassName("article");
-   for(let i=0;i<card.length;i++){
-      card[i].classList.toggle("card_light");  
-   card[i].classList.toggle("card_dark");
+   
+   clickCount++;
+   for(let i=0;i<card.length;i++){;
+     
+      card[i].setAttribute("id", clickCount % 2 === 0 ? "card_light" : "card_dark");
+      
+  
    }
    
    
-}
+ }
 document.getElementById('toggleBtn').addEventListener('click',darkbg);

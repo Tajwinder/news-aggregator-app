@@ -17,12 +17,12 @@ body{
   
 }
 
-.card_dark{
+#card_dark{
 background-color: rgb(59, 58, 58);
   color:white;
  
 }
-.card_light{
+#card_light{
   background-color: rgb(233, 227, 227);
   color: black;
 }
