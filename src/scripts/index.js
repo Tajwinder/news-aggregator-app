@@ -26,12 +26,13 @@ function reset(){
      if( body.classList.contains("body_dark")){
         
        darkbg();
-       
+        document.querySelector('.not-found').style.display='none'; 
         fetchTopHeadlines();
         
 
      }
       else{
+         document.querySelector('.not-found').style.display='none'; 
          fetchTopHeadlines();
       }
      
@@ -42,7 +43,7 @@ function reset(){
 
 //  function with async/await
 async function fetchTopHeadlines(){
-   document.querySelector('.not-found').innerHTML=""; 
+   // document.querySelector('.not-found').innerHTML=""; 
    document.querySelector('.loader').style.display='block';
     let output='';
     var url ='https://newsapi.org/v2/top-headlines?country=in&apiKey=e854eeb8b1964674b3f6db6fe2f78ef4';
@@ -183,14 +184,14 @@ finalHtml=finalHtml+htmlString;
 let checkNoArticle=(jsonResponse)=>{
    if(jsonResponse.totalResults==0){
       document.querySelector('.loader').style.display='none'; 
-     document.querySelector('.not-found').innerHTML="No article was found based on the search."; 
+     document.querySelector('.not-found').style.display='block'; 
       
      return 0;
       
    }
    else{
      
-      document.querySelector('.not-found').innerHTML=""; 
+      // document.querySelector('.not-found').style.display='none'; 
       return jsonResponse.articles;
    }
  }
@@ -199,7 +200,7 @@ let checkNoArticle=(jsonResponse)=>{
  // function for fetching news related to the searched keyword
 
  async function searchkeyword(){
-   document.querySelector('.not-found').innerHTML=""; 
+   // document.querySelector('.not-found').innerHTML=""; 
   document.querySelector('.loader').style.display='block';
    let output='';
    let newurl='https://newsapi.org/v2/everything?q='+keyword+'&apiKey=e854eeb8b1964674b3f6db6fe2f78ef4';

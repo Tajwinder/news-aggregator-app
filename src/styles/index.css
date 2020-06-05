@@ -199,7 +199,10 @@ li:hover #urlLink{
  right:15px;
 
 }
-
+.not-found{
+  display: none;
+  
+}
 
 /* card style */
 .article{
